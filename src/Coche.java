@@ -1,8 +1,12 @@
-
+/**
+ * 
+ * @author Jon Jauregi
+ *
+ */
 public class Coche {
 	
-	final double GASOLINA = 1.39;
-	final double GASOIL = 1.12;
+	private final double GASOLINA = 1.39;
+	private final double GASOIL = 1.12;
 	
 	private String color;
 	private String conductor;
@@ -11,7 +15,7 @@ public class Coche {
 	private int num_plazas;
 	private int tamanio_maletero;
 	private int caballos;
-	private boolean tipo_combustible;
+	private boolean esGasolina;
 	private int kilometraje;
 	private double litros_combustible;
 	private double max_litros;
@@ -29,7 +33,7 @@ public class Coche {
 	public double getMax_litros() {
 		return max_litros;
 	}
-	public void setMax_litros(double max_litros) {
+	public void setMax_litros(int max_litros) {
 		this.max_litros = max_litros;
 	}
 	public void setColor(String color) {
@@ -72,17 +76,17 @@ public class Coche {
 		this.caballos = caballos;
 	}
 	public boolean isCombustible() {
-		return tipo_combustible;
+		return esGasolina;
 	}
 	public void setCombustible(boolean combustible) {
-		this.tipo_combustible = combustible;
+		this.esGasolina = combustible;
 	}
 	
 	public boolean isTipo_combustible() {
-		return tipo_combustible;
+		return esGasolina;
 	}
 	public void setTipo_combustible(boolean tipo_combustible) {
-		this.tipo_combustible = tipo_combustible;
+		this.esGasolina = tipo_combustible;
 	}
 	public int getKilometraje() {
 		return kilometraje;
@@ -136,13 +140,18 @@ public class Coche {
 	}
 	public double repostar(int euros){
 		double repostaje_litros;
-		if(tipo_combustible){
+		double euros_sobrante = 0;
+		if(esGasolina){
 			repostaje_litros = getLitros_combustible() + (euros/GASOLINA);
 			if(repostaje_litros > getMax_litros()){
+				double repostaje_sobrante = repostaje_litros - getMax_litros();
+				euros_sobrante = repostaje_sobrante / GASOLINA;
 				setLitros_combustible(getMax_litros());
+				return euros_sobrante;
 			}
 			else {
 				setLitros_combustible(repostaje_litros);
+				return 0;
 			}
 			
 		}
@@ -150,9 +159,11 @@ public class Coche {
 			repostaje_litros = getLitros_combustible() + (euros/GASOIL);
 			if(repostaje_litros > getMax_litros()){
 				setLitros_combustible(getMax_litros());
+				euros_sobrante = euros - (euros / getMax_litros());
 			}
 			else {
 				setLitros_combustible(repostaje_litros);
+				return 0;
 			}
 		}
 		return euros;

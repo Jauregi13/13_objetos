@@ -1,7 +1,9 @@
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
+/**
+ * Esta clase permite almacenar informacion de una persona
+ * @author Jon Jauregi
+ *
+ */
 public class Persona {
 	//atributos private
 		private String nombre;
@@ -21,6 +23,11 @@ public class Persona {
 			System.out.println("He comido");
 			
 		}
+		/**
+		 * Con este metodo permite saber si tenemos suficiente dinero para
+		 * hacer un gasto concreto, y si lo tiene se calculará el gasto
+		 * @param cantidad
+		 */
 		public void gastarDinero(double cantidad){
 			if (cantidad > this.dinero){
 				System.out.println("Has gastado mas de lo que puedes!!");
@@ -30,24 +37,53 @@ public class Persona {
 			}
 			
 		}
+		/**
+		 * Esta funcion devuelve el dinero que tiene una persona
+		 * @return dinero
+		 */
 		public double getDinero() {
 			return dinero;
 		}
+		/**
+		 * Este metodo nos permite definir el dinero que tiene una persona
+		 * @param dinero
+		 */
 		public void setDinero(double dinero) {
 			this.dinero = dinero;
 		}
+		/**
+		 * Este metodo permite definir el peso de una persona, y si es
+		 * negativo nos dara un error
+		 * @param peso
+		 */
 		public void setPeso(double peso) {
-			this.peso = peso;
+			if (this.peso < 0 ){
+				System.out.println("El peso introducido es incorrecto");
+			}else {
+				this.peso = peso;
+			}
 		}
+		/**
+		 * Esta funcion nos devuelve el peso que le hemos puesto a una persona
+		 * @return peso
+		 */
+		public double getPeso() {
+			return peso;
+		}
+		/**
+		 * Este metodo permite saber cuantos kilometros ha corrido una persona
+		 * @param km
+		 */
 		public void correr(double km){
 			double pesoPerdido = 0.05*km;
 			this.peso = this.peso - pesoPerdido;
-			System.out.println("He corrido " + km + "kilometros y he perdido " + pesoPerdido + " kilos.");
+			System.out.println("He corrido " + km + " kilometros y he perdido " + pesoPerdido + " kilos.");
 		}
 		public void dormir(){
 			System.out.println("He comido");
 		}
-		/*
+		/**
+		 * Este metodo sirve para saber cuantos kilos ha engordado
 		 * @param peso en cuanto se va a cambiar el peso
 		 */
 		public void engordar(int peso){
@@ -56,13 +92,17 @@ public class Persona {
 		public void cumplirAnio(){
 				this.edad++;
 		}
-		
-		public void cambiarEdad(int edad){
-			this.edad = edad;
-		}
+		/**
+		 * Esta funcion devuelve el nombre que le hemos puesto a una persona
+		 * @return nombre
+		 */
 		public String getNombre() {
 			return nombre;
 		}
+		/**
+		 * Este metodo nos permite definir el nombre de una persona
+		 * @param nombre
+		 */
 		public void setNombre(String nombre) {
 			this.nombre = nombre;
 		}
@@ -106,20 +146,36 @@ public class Persona {
 		public void setDireccion(String direccion) {
 			this.direccion = direccion;
 		}
+		/**
+		 * Esta funcion devuelve el DNI que le hemos puesto a una persona
+		 * @return DNI
+		 */
 		public String getDNI() {
 			return DNI;
 		}
-		public void setDNI(String dNI) {
-			if (this.DNI.length() < 9){
+		/**
+		 * Este metodo permite definir el DNI de una persona
+		 * @param dNI
+		 */
+		public void setDNI(String DNI) {
+			if (DNI.length() < 9){
 				System.out.println("El DNI introducido es incorrecto");
 			}else {
-				DNI = dNI;
+				this.DNI = DNI;
 			}
 			
 		}
+		/**
+		 * Esta funcion devuelve los apellidos de una persona
+		 * @return apellidos
+		 */
 		public String getApellidos() {
 			return apellidos;
 		}
+		/**
+		 * Este metodo sirve para definir los apellidos de una persona
+		 * @param apellidos
+		 */
 		public void setApellidos(String apellidos) {
 			this.apellidos = apellidos;
 		}
@@ -129,17 +185,7 @@ public class Persona {
 		public void setPoblacion(String poblacion) {
 			this.poblacion = poblacion;
 		}
-		public double getPeso() {
-			return peso;
-		}
-		public void setPeso(int peso) {
-			if (this.peso < 0 ){
-				System.out.println("El peso introducido es incorrecto");
-			}else {
-				this.peso = peso;
-			}
-			
-		}
+		
 		
 		
 		

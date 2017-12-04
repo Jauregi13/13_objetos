@@ -9,7 +9,7 @@ public class Coche {
 	private final double GASOIL = 1.12;
 	
 	private String color;
-	private String conductor;
+	private Persona conductor;
 	private String matricula;
 	private int num_puertas;
 	private int num_plazas;
@@ -25,6 +25,15 @@ public class Coche {
 	private double consumoMedio;
 	private int anioMatriculacion;
 	
+	
+	public Coche(){
+		
+	}
+	
+	public Coche(Persona conductor){
+		this.conductor = conductor;
+	}
+	
 	//getters y setters
 	
 	public String getColor() {
@@ -39,10 +48,10 @@ public class Coche {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	public String getConductor() {
+	public Persona getConductor() {
 		return conductor;
 	}
-	public void setConductor(String conductor) {
+	public void setConductor(Persona conductor) {
 		this.conductor = conductor;
 	}
 	public String getMatricula() {

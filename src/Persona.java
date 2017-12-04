@@ -17,6 +17,19 @@ public class Persona {
 		private String poblacion;
 		private double peso;
 		private double dinero;
+		private CuentaBancaria cuenta;
+		
+		
+		
+
+		public Persona(){
+			
+		}
+		
+		public Persona(String nombre, String apellido){
+			this.nombre = nombre;
+			this.apellidos = apellido;
+		}
 	
 	//metodos public
 		public void comer(){
@@ -78,6 +91,10 @@ public class Persona {
 			double pesoPerdido = 0.05*km;
 			this.peso = this.peso - pesoPerdido;
 			System.out.println("He corrido " + km + " kilometros y he perdido " + pesoPerdido + " kilos.");
+		}
+		
+		public void correr(int minutos){
+			this.peso = this.peso - 0.01;
 		}
 		public void dormir(){
 			System.out.println("He comido");
@@ -184,6 +201,13 @@ public class Persona {
 		}
 		public void setPoblacion(String poblacion) {
 			this.poblacion = poblacion;
+		}
+		public CuentaBancaria getCuenta() {
+			return cuenta;
+		}
+
+		public void setCuenta(CuentaBancaria cuenta) {
+			this.cuenta = cuenta;
 		}
 		
 		

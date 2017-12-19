@@ -284,7 +284,7 @@ public class Persona {
 	}
 	
 	public String getStringGuardado(){
-		return (getNombre() + ","+getApellidos()+","+getTelefono());
+		return (getNombre() + ","+getApellidos()+","+getEdad()+","+getTelefono()+","+getDNI());
 	}
 
 }

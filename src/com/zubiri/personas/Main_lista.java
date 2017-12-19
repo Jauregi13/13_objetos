@@ -19,7 +19,7 @@ public class Main_lista {
 	 */
 	public static void main(String[] args) {
 		ArrayList<Persona> personas = new ArrayList<Persona>();
-		final String NOMBRE_FICHERO = "D:/personas.txt";
+		final String NOMBRE_FICHERO = "C:/Users/Jon Jauregi/Documents/Ejercicios eclipse/13_objetos/src/com/zubiri/personas/personas.txt";
 
 		// rellenar la lista desde fichero
 		personas = crearLista(NOMBRE_FICHERO);
@@ -61,6 +61,7 @@ public class Main_lista {
 				persona.setNombre(nombre);
 				persona.setApellidos(apellido);
 				persona.setTelefono(telf);
+				persona.setDNI(DNI);
 
 				// aniadirlo a la lista
 				personas.add(persona);
@@ -128,8 +129,9 @@ public class Main_lista {
 				Persona p = new Persona();
 				p.setNombre(partes[0]);
 				p.setApellidos(partes[1]);
-				p.setTelefono(partes[2]);
-				p.setDNI(partes[3]);
+				p.setEdad(Integer.parseInt(partes[2]));
+				p.setTelefono(partes[3]);
+				p.setDNI(partes[4]);
 
 				lista.add(p);
 			}

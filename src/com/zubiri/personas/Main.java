@@ -17,7 +17,7 @@ public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 		File fichero = new File("D:/personas.txt");
 		Scanner lector = new Scanner(fichero);
-		Persona[] cuadrilla = new Persona[5];
+		Persona[] cuadrilla = new Persona[3];
 		int indice = 0;
 		while (lector.hasNextLine()) {
 			String linea = lector.nextLine();
@@ -29,8 +29,9 @@ public class Main {
 			indice++;
 		}
 		System.out.println("Este es el listado de personas:");
-		String primerApellido = cuadrilla[0].getApellidos();
 		Persona primeraPersona = cuadrilla[0];
+		String primerApellido = primeraPersona.getApellidos();
+		
 		for (int i = 1; i < cuadrilla.length; i++) {
 			if (primerApellido.compareTo(cuadrilla[i].getApellidos()) > 0) {
 				primerApellido = cuadrilla[i].getApellidos();

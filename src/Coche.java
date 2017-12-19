@@ -1,3 +1,5 @@
+import com.zubiri.personas.Persona;
+
 /**
  * 
  * @author Jon Jauregi

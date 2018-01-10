@@ -19,8 +19,8 @@ public class Recta extends Figura1D{
 		super.setX1(lector.nextInt());
 		System.out.println("Escribe la segunda coordenada del segundo punto:");
 		super.setY1(lector.nextInt());
-		
-		if(super.getY1() > super.getY0()){
+	
+		if(super.getY0() > super.getY1()){
 			
 		}
 

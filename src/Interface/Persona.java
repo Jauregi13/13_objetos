@@ -1,4 +1,4 @@
-package com.zubiri.personas;
+package Interface;
 
 import java.util.Date;
 
@@ -17,7 +17,7 @@ public class Persona {
 	private String nacionalidad;
 	private String direccion;
 	private String DNI;
-	private String apellido;
+	private String apellidos;
 	private String poblacion;
 	private double peso;
 	private double dinero;
@@ -41,7 +41,7 @@ public class Persona {
 	 */
 	public Persona(String nombre, String apellido) {
 		this.nombre = nombre;
-		this.apellido = apellido;
+		this.apellidos = apellido;
 	}
 
 	// metodos public
@@ -242,7 +242,7 @@ public class Persona {
 	 * @return apellidos
 	 */
 	public String getApellidos() {
-		return apellido;
+		return apellidos;
 	}
 
 	/**
@@ -251,7 +251,7 @@ public class Persona {
 	 * @param apellidos
 	 */
 	public void setApellidos(String apellidos) {
-		this.apellido = apellidos;
+		this.apellidos = apellidos;
 	}
 
 	public String getPoblacion() {

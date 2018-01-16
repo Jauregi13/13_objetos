@@ -271,7 +271,7 @@ public class Persona {
 	 * Este metodo muestra el nombre y el apellido de la persona
 	 */
 	public void mostrarPersona() {
-		System.out.println(getNombre() + " " + getApellidos() + " " + getDNI());
+		System.out.println(getNombre() + " " + getApellidos());
 	}
 
 	/**

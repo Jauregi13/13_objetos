@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Main {
+public class MainPersona {
 
 	public static void main(String[] args) {
 		final int MOSTRAR = 1;
@@ -16,21 +16,26 @@ public class Main {
 		int opcion = 0;
 		Persona manu = new Persona("Manuel","Gonzalez");
 		manu.setDNI("77634655S");
+		manu.setEdad(18);
 		alumnos.add(manu);
 		Persona jon = new Persona ("Jon", "Jauregi");
 		jon.setDNI("54643453Ñ");
+		jon.setEdad(21);
 		alumnos.add(jon);
 		Persona mikel = new Persona ("Mikel", "Paredes");
 		mikel.setDNI("46512398D");
+		mikel.setEdad(16);
 		alumnos.add(mikel);
 		Persona jokin = new Persona ("Jokin", "Ibarretxe");
 		jokin.setDNI("75896324R");
+		jokin.setEdad(25);
 		alumnos.add(jokin);
 		Persona aintzane = new Persona ("Aintzane", "Garcia");
 		aintzane.setDNI("71264895P");
+		aintzane.setEdad(21);
 		alumnos.add(aintzane);
 		
-		NombreComparator comparador = new NombreComparator();
+		EdadComparator comparador = new EdadComparator();
 		
 		alumnos.sort(comparador);
 		
@@ -48,6 +53,10 @@ public class Main {
 				break;
 			
 			case AÑADIR:
+				
+				break;
+			
+			case SALIR:
 				
 				break;
 

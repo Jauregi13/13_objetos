@@ -2,7 +2,7 @@ package Interface;
 
 import java.util.Comparator;
 
-public class NombreComparator implements Comparator<Persona> {
+public class ApellidoComparator implements Comparator<Persona> {
 
 	public int compare(Persona arg0, Persona arg1) {
 		
